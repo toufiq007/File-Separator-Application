@@ -41,7 +41,7 @@ def create_move(extension,file_name):
 
 # all important files and folders
 
-directory = "F:\\myfile"
+directory = input('Enter your folder path: ')
 other_name = input('Enter other name: ')
 rename_folder()
 all_files = os.listdir(directory)
