@@ -1,5 +1,4 @@
 # necessary module
-
 import os,shutil
 
 # file extensions --> you can write every single extensions inside the list or tuple
@@ -47,7 +46,6 @@ rename_folder()
 all_files = os.listdir(directory)
 length = len(all_files)
 count=1
-
 
 
 # functions
