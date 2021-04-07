@@ -7,6 +7,13 @@ folders = {
     'documents' : ['.pdf','.doc','.txt','.xlsx','.rar','.zip','.xls','.pptx'],
 }
 
+def rename_folder():
+    for folder in os.listdir(directory):
+        if os.path.isdir(os.path.join(directory,folder)) == True:
+            os.rename(os.path.join(directory,folder),os.path.join(directory,folder.lower()))
+
+
+
 def create_move(extension,file_name):
     found = False
     for folder_name in folders:
@@ -23,12 +30,13 @@ def create_move(extension,file_name):
         shutil.move(os.path.join(directory,file_name),os.path.join(directory,others_name))
     
 
-
 directory = input("Enter your file or folder path: ")
 all_files = os.listdir(directory)
 others_name = input('Enter the others file folders name: ')
 length = len(all_files)
 count=1
+rename_folder()
+
 
 
 for file in all_files:
