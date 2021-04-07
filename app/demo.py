@@ -24,11 +24,15 @@ def create_move(extension,file_name):
     
 
 
-directory = "Enter your file or folder path: "
+directory = input("Enter your file or folder path: ")
 all_files = os.listdir(directory)
-others_name = 'Enter the others folder locations: '
+others_name = input('Enter the others file folders name: ')
+length = len(all_files)
+count=1
+
 
 for file in all_files:
     if os.path.isfile(os.path.join(directory,file)) == True:
         create_move(file.split('.')[-1],file)
-
+    print(f' Total files:{length} || Done:{count} || left:{length-count} ')
+    count+=1
