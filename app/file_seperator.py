@@ -16,6 +16,12 @@ folders = {
 
 # directory = input('Enter your locations: ')
 
+def rename_folder():
+    for folder in os.listdir(directory):
+        if os.path.isdir(os.path.join(directory,folder))==True:
+            os.rename(os.path.join(directory,folder),os.path.join(directory,folder.lower()))
+
+
 def create_move(extension,file_name):
     fname = False
     for folder_name in folders:
@@ -35,35 +41,19 @@ def create_move(extension,file_name):
 
 
 
-
-
 directory = "F:\\myfile"
 other_name = input('Enter other name: ')
+rename_folder()
 all_files = os.listdir(directory)
+length = len(all_files)
+count=1
+
 # print(all_files)
 
 
 for i in all_files:
     if os.path.isfile(os.path.join(directory,i))== True:
         create_move(i.split('.')[-1],i)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    print(f'Total files: {length} | Done: {count} | Left: {length-count} ')
+    count+=1
 
