@@ -3,9 +3,15 @@ import os,shutil
 dict_folders = {
     'audios' : ['.mp3','.mp4','.wav','.flac'],
     'videos' : ['.mp4','.mkv','.MKV','.flv','.mpeg'],
-    'images' : ['.jpg','.jepg','png'],
-    'documents' : ['.pdf','.doc','.txt','.xlsx','.rar','.zip','.xls','.pptx'],
+    'images' : ['.jpg','.jepg','png','.gif'],
+    'documents' : ['.doc','.txt','.pptx'],
+    'excel_sheets' : ['.xls','.xlsx'],
+    'pdf_files' : ['.pdf'],
+    'application' : ['.exe'],
+    'zip_files' : ['.zip','.rar',]
+
 }
+
 
 def rename_folder():
     for folder in os.listdir(directory):
